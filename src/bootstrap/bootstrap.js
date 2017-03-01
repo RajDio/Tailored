@@ -6,11 +6,41 @@ export default class Bootstrap extends React.Component {
     super(props);
   }
 
+  options() {
+    const styles = {};
+    return (
+      <div style={styles}>
+        options
+      </div>
+    );
+  }
+
+  preview() {
+    const styles = {};
+    return (
+      <div style={styles}>
+        preview
+      </div>
+    );
+  }
+
+  code() {
+    const styles = {};
+    return (
+      <div style={styles}>
+        code
+      </div>
+    );
+  }
+
   render() {
     return (
       <div>
-        <Link to="/">home</ Link>
+        <Link to="/">Home</ Link>
         <h2>Bootstrap</h2>
+        {this.options()}
+        {this.preview()}
+        {this.code()}
       </div>
     );
   }

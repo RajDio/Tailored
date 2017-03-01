@@ -14,7 +14,7 @@ export default class Home extends React.Component {
         flexWrap: 'wrap'
       },
       square: {
-        backgroundColor: '#e8fcff',
+        // backgroundColor: '#e8fcff',
         margin: '40px 20px 0px',
         flexDirection: 'column',
         alignItems: 'center',
@@ -50,7 +50,9 @@ export default class Home extends React.Component {
 
     return (
       <div>
-        <h2 style={styles.text}>Homejs</h2>
+        <h2 style={styles.text}>Welcome to Tailored!</h2>
+        <h3 style={styles.text}>Start customizing your components below!</h3>
+        <h4>Select the framework you are using</h4>
         <div style={styles.buttons}>
           <Link to="/bootstrap" style={styles.text}>
             <div style={styles.square}>
