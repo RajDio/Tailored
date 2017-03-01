@@ -3,8 +3,8 @@ import {Router, Route, Link, IndexRoute, browserHistory} from 'react-router';
 
 // import Nav from './nav';
 import Home from './home';
-import Bootstrap from './bootstrap';
-import Materialui from './materialui';
+import Bootstrap from './bootstrap/bootstrap';
+import Materialui from './mui/materialui';
 
 class App extends Component {
   render() {
