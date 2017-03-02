@@ -192,7 +192,7 @@ export default class MuiButton extends Component {
       paddingTop: '3em',
       textAlign: 'center',
       backgroundColor: 'transparent',
-      border: '3px solid #C5DFF2',
+      // border: '3px solid #C5DFF2',
       // borderTop: '3px solid #3e7ce0',
       // borderLeft: '3px solid #867BCD',
       // borderRight: '3px solid #00BCD4',
