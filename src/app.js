@@ -6,6 +6,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Home from './home';
 import Bootstrap from './bootstrap/bootstrap';
 import Materialui from './mui/materialui';
+// import MuiButton from './mui/muiButton/muiBtn';
+// import MuiButtonPreview from './mui/muiButton/MuiBtnPreview';
 
 class App extends Component {
   render() {

@@ -1,5 +1,6 @@
 var path = require('path');
 var express = require('express');
+var routes = require('./routes');
 
 //require Webpack, middleware and config
 var webpackDevMiddleware = require('webpack-dev-middleware');
@@ -24,6 +25,8 @@ app.use(webpackDevMiddleware(compiler, {
  },
  historyApiFallback: true,
 }));
+
+routes(app, express);
 
 var port = 4000;
 
