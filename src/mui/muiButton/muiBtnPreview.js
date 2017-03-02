@@ -22,23 +22,34 @@ export default class MuiButtonPreview extends Component {
   }
 
   renderPreview() {
-
-
+    let flatStyle = {
+      backgroundColor: this.props.button.bgColor,
+      color: this.props.button.fontColor
+    };
+    let raisedStyle = {
+      backgroundColor: this.props.button.bgColor
+    };
+    let floatStyle = {
+      fillColor: this.props.button.bgColor,
+    };
+    let iconStyle = {
+      fillColor: this.props.button.bgColor,
+    };
     if (this.props.button.type === 'flat') {
       return (
-        <FlatButton label="FlatButton"/>
+        <FlatButton label={this.props.button.label} style={flatStyle}/>
       );
     } else if (this.props.button.type === 'raised') {
       return (
-        <RaisedButton label="RaisedButton"/>
+        <RaisedButton label={this.props.button.label} buttonStyle={raisedStyle} labelColor={this.props.button.fontColor}/>
       );
     } else if (this.props.button.type === 'float') {
       return (
-        <FloatingActionButton label="FloatingActionButton"/>
+        <FloatingActionButton style={floatStyle}/>
       );
     } else if (this.props.button.type === 'icon') {
       return (
-        <IconButton tooltip="IconButton">
+        <IconButton tooltip="IconButton" style={iconStyle}>
           <ActionHome />
         </IconButton>
       );
