@@ -1,0 +1,19 @@
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-default {
+  background-color: #fff;
+}
+
+.navbar-nav {
+  padding-left: 110px;
+}
+
+.navbar-right {
+  padding-right: 110px;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    background-color: #e9f0f2;
+}

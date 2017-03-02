@@ -16,7 +16,13 @@ module.exports = {
        exclude: /node_modules/,
        loaders: ['babel'],
      },
-   ],
+     { test: /\.css$/, loader: "style-loader!css-loader" },
+     {
+      test: /\.(?:png|jpg|svg)$/,
+      loader: 'url-loader',
+      query: { limit: 10000 }
+    }
+   ]
  },
  resolveLoader: {
    root: [
