@@ -10,11 +10,21 @@ export default class Home extends React.Component {
       title: {
         fontFamily: 'Roboto',
         textAlign: 'center',
-        marginTop: '120px'
+        marginTop: '120px',
+        fontSize: '52px',
+        color: '#242628',
+        textRendering: 'optimizeLegibility',
+        fontWeight: '100'
       },
       text: {
         textDecoration: 'none',
         textAlign: 'center',
+      },
+      description: {
+        color: '#52636b',
+        textAlign: 'center',
+        fontWeight: '300',
+        opacity: '.7'
       },
       buttons: {
         display: 'flex',
@@ -55,16 +65,42 @@ export default class Home extends React.Component {
       },
       colorStripe: {
         height: '380px',
-        background: 'radial-gradient(circle farthest-corner at right bottom,#e9f0f2 0,#fcfeff 100%)'
+        background: 'radial-gradient(circle farthest-corner at right bottom,#e9f0f2 0,#fcfeff 100%)',
+      },
+      contributeStripe: {
+        height: '450px',
+        background: 'radial-gradient(circle farthest-corner at right bottom,#e9f0f2 0,#fcfeff 100%)',
       },
       whiteStripe: {
         height: '380px',
         marginTop: '30px'
       },
-      rounded: {
+      footerStripe: {
+        height: '200px',
+        marginTop: '30px'
+      },
+      diogenis: {
         height: '80px',
         width: '80px',
-        borderRadius: '40px'
+        borderRadius: '40px',
+        marginTop: '40px',
+        marginLeft: '305px'
+      },
+      raj: {
+        height: '80px',
+        width: '80px',
+        borderRadius: '40px',
+        marginTop: '40px',
+        marginLeft: '50px'
+      },
+      community: {
+        marginTop: '90px',
+        textDecoration: 'none',
+        textAlign: 'center'
+      },
+      contribute: {
+        marginLeft: '350',
+        marginTop: '40',
       }
     };
 
@@ -76,7 +112,7 @@ export default class Home extends React.Component {
             <div style={styles.colorStripe}>
               <div className="col-xs-8 col-xs-offset-2">
                 <h1 style={styles.title}>Tailored</h1>
-                <h3 style={styles.text}>Start customizing your components below!</h3>
+                <h3 style={styles.description}>Start customizing your components below!</h3>
               </div>
             </div>
           </div>
@@ -113,11 +149,14 @@ export default class Home extends React.Component {
 
         <div className="row">
           <div className="col-xs-12">
-            <div style={styles.colorStripe}>
+            <div style={styles.contributeStripe}>
               <div className="col-xs-8 col-xs-offset-2">
-                <h2 style={styles.title}>Help us build Tailored</h2>
-                <img style={styles.rounded} src="http://fakeimg.pl/300/" />
-                <img style={styles.rounded} src="http://fakeimg.pl/300/"/>
+                <h2 style={styles.community}>Help us build Tailored</h2>
+                <h4 style={styles.description}>Join an incredible group of contributors all over the world</h4>
+                <img style={styles.diogenis} src="http://fakeimg.pl/300/" />
+                <img style={styles.raj} src="http://fakeimg.pl/300/"/>
+                <br/>
+                <button style={styles.contribute} type='button' className='btn btn-danger btn-lg'>Contribute</button>
               </div>
             </div>
           </div>
@@ -125,8 +164,9 @@ export default class Home extends React.Component {
 
         <div className="row">
           <div className="col-xs-12">
-            <div style={styles.whiteStripe}>
+            <div style={styles.footerStripe}>
               <div className="col-xs-8 col-xs-offset-2">
+                <h4 style={styles.description}>Footer</h4>
               </div>
             </div>
           </div>
