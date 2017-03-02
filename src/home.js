@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 import {Router, Route, Link, IndexRoute, browserHistory} from 'react-router';
+import Nav from './nav';
 // import logo from 'mui/material-ui-logo';
 
 export default class Home extends React.Component {
 
   render() {
     const styles = {
+      title: {
+        fontFamily: 'Nunito'
+      },
       text: {
         textDecoration: 'none'
       },
@@ -45,12 +49,26 @@ export default class Home extends React.Component {
         alignItems: 'center',
         height: '12em',
         width: '12em'
+      },
+      colorStripe: {
+        height: '300px',
+        backgroundColor: '#e9f0f2'
       }
     };
 
     return (
       <div>
-        <h2 style={styles.text}>Welcome to Tailored!</h2>
+        <Nav/>
+        <div className="row">
+          <div className="col-xs-12">
+            <div style={styles.colorStripe}>
+              <div className="col-xs-4 col-xs-offset-4">
+                <h2 style={styles.title}>Tailored</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <h3 style={styles.text}>Start customizing your components below!</h3>
         <h4>Select the framework you are using</h4>
         <div style={styles.buttons}>
