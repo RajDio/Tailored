@@ -29,6 +29,9 @@ export default class Materialui extends Component {
         fontWeight: 400,
       },
     };
+    const tabStyles = {
+      backgroundColor: '#3e7ce0'
+    }
     return (
       <div>
         <Toolbar>
@@ -44,7 +47,7 @@ export default class Materialui extends Component {
           </ToolbarGroup>
         </Toolbar>
 
-        <Tabs>
+        <Tabs inkBarStyle={{backgroundColor: '#3e7ce0'}}>
           <Tab label="Buttons">
             <MuiButton></MuiButton>
           </Tab>
