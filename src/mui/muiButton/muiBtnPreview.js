@@ -40,13 +40,12 @@ export default class MuiButtonPreview extends Component {
     const codeStyle = {
       display: 'flex',
       textAlign: 'center',
-      overflow: 'auto',
       flexwrap: 'wrap'
     };
     if (this.props.button.type === 'flat') {
       let code = `
         <FlatButton
-          label=${this.props.button.label}
+          label="${this.props.button.label}"
           rippleColor=${this.props.button.fontColor}
           style=${JSON.stringify(flatStyle)}
         />
@@ -65,7 +64,7 @@ export default class MuiButtonPreview extends Component {
     } else if (this.props.button.type === 'raised') {
       let code = `
         <RaisedButton
-          label=${this.props.button.label}
+          label="${this.props.button.label}"
           labelColor=${this.props.button.fontColor}
           buttonStyle=${JSON.stringify(raisedStyle)}
         />
@@ -74,20 +73,43 @@ export default class MuiButtonPreview extends Component {
         <div>
           <RaisedButton label={this.props.button.label} buttonStyle={raisedStyle} labelColor={this.props.button.fontColor}/>
           <Divider style={{backgroundColor: '#C5DFF2'}}/>
-          <div style={codeStyle}>
+          <code style={codeStyle}>
             {code}
-          </div>
+          </code>
         </div>
       );
     } else if (this.props.button.type === 'float') {
+      let code = `
+        <FloatingActionButton
+          backgroundColor=${this.props.button.bgColor}
+          style=${JSON.stringify(floatStyle)}
+        />
+      `;
       return (
-        <FloatingActionButton backgroundColor={this.props.button.bgColor} style={floatStyle}/>
+        <div>
+          <FloatingActionButton backgroundColor={this.props.button.bgColor} style={floatStyle}/>
+          <Divider style={{backgroundColor: '#C5DFF2'}}/>
+          <code style={codeStyle}>
+            {code}
+          </code>
+        </div>
       );
     } else if (this.props.button.type === 'icon') {
+      let code = `
+        <IconButton
+          style=${JSON.stringify(iconStyle)}
+        />
+      `;
       return (
-        <IconButton tooltip="IconButton" style={iconStyle}>
-          <ActionHome />
-        </IconButton>
+        <div>
+          <IconButton tooltip="IconButton" style={iconStyle}>
+            <ActionHome />
+          </IconButton>
+          <Divider style={{backgroundColor: '#C5DFF2'}}/>
+          <code style={codeStyle}>
+            {code}
+          </code>
+        </div>
       );
     }
   }
