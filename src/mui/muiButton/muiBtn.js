@@ -186,23 +186,19 @@ export default class MuiButton extends Component {
     const previewStyle = {
       // backgroundColor: '#FAFFFD',
       margin: '5em',
-      height: '10em',
-      width: '15em',
+      // height: '15em',
+      width: '20em',
       padding: '1em',
       paddingTop: '3em',
       textAlign: 'center',
       backgroundColor: 'transparent',
-      // border: '3px solid #C5DFF2',
-      // borderTop: '3px solid #3e7ce0',
-      // borderLeft: '3px solid #867BCD',
-      // borderRight: '3px solid #00BCD4',
-      // borderBottom: '3px solid #00BCD4',
-      borderRadius: '5px 5px 7px 7px'
+      display: 'flex',
+      flexwrap: 'wrap'
     };
     return (
       <div style={pageStyle}>
         {this.renderOptions()}
-        <Paper style={previewStyle} zDepth={1}>
+        <Paper style={previewStyle} zDepth={0}>
           <MuiButtonPreview
             button={this.state}
           />

@@ -11,6 +11,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
+import Divider from 'material-ui/Divider';
 
 export default class MuiButtonPreview extends Component {
   constructor(props) {
@@ -34,36 +35,84 @@ export default class MuiButtonPreview extends Component {
     };
     let iconStyle = {
       fillColor: this.props.button.bgColor,
+      backgroundColor: this.props.button.bgColor
+    };
+    const codeStyle = {
+      display: 'flex',
+      textAlign: 'center',
+      flexwrap: 'wrap'
     };
     if (this.props.button.type === 'flat') {
+      let code = `
+        <FlatButton
+          label="${this.props.button.label}"
+          rippleColor=${this.props.button.fontColor}
+          style=${JSON.stringify(flatStyle)}
+        />
+      `;
       return (
-        <FlatButton label={this.props.button.label} style={flatStyle}/>
+        <div>
+          <FlatButton label={this.props.button.label} style={flatStyle} rippleColor={this.props.button.fontColor}/>
+          <Divider style={{backgroundColor: '#C5DFF2'}}/>
+          <Paper>
+            <code style={codeStyle}>
+              {code}
+            </code>
+          </Paper>
+        </div>
       );
     } else if (this.props.button.type === 'raised') {
+      let code = `
+        <RaisedButton
+          label="${this.props.button.label}"
+          labelColor=${this.props.button.fontColor}
+          buttonStyle=${JSON.stringify(raisedStyle)}
+        />
+      `;
       return (
-        <RaisedButton label={this.props.button.label} buttonStyle={raisedStyle} labelColor={this.props.button.fontColor}/>
+        <div>
+          <RaisedButton label={this.props.button.label} buttonStyle={raisedStyle} labelColor={this.props.button.fontColor}/>
+          <Divider style={{backgroundColor: '#C5DFF2'}}/>
+          <code style={codeStyle}>
+            {code}
+          </code>
+        </div>
       );
     } else if (this.props.button.type === 'float') {
+      let code = `
+        <FloatingActionButton
+          backgroundColor=${this.props.button.bgColor}
+          style=${JSON.stringify(floatStyle)}
+        />
+      `;
       return (
-        <FloatingActionButton style={floatStyle}/>
+        <div>
+          <FloatingActionButton backgroundColor={this.props.button.bgColor} style={floatStyle}/>
+          <Divider style={{backgroundColor: '#C5DFF2'}}/>
+          <code style={codeStyle}>
+            {code}
+          </code>
+        </div>
       );
     } else if (this.props.button.type === 'icon') {
+      let code = `
+        <IconButton
+          style=${JSON.stringify(iconStyle)}
+        />
+      `;
       return (
-        <IconButton tooltip="IconButton" style={iconStyle}>
-          <ActionHome />
-        </IconButton>
+        <div>
+          <IconButton tooltip="IconButton" style={iconStyle}>
+            <ActionHome />
+          </IconButton>
+          <Divider style={{backgroundColor: '#C5DFF2'}}/>
+          <code style={codeStyle}>
+            {code}
+          </code>
+        </div>
       );
     }
   }
-
-  // renderCode() {
-  //   const codeStyle = {};
-  //   return (
-  //     <div style={codeStyle}>
-  //       code
-  //     </div>
-  //   );
-  // }
 
   render() {
     const codeStyle = {};
