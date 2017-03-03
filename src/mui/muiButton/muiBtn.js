@@ -19,25 +19,17 @@ export default class MuiButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: '',
+      type: 'flat',
       label: 'label',
-      bgColor: '#000',
-      fontColor: '#fff'
+      bgColor: '#fff',
+      fontColor: '#000'
     };
   }
 
   // Mui Button Properties:
-    // backgroundColor, str
-    // disabled, bool
     // hoverColor, str
-    // href, str
     // icon, node
-    // label, str
-    // labelPosition, 'before' || 'after'
-    // labelStyle, obj
-    // rippleColor, str
-    // style, obj
-    // if themed, primary and secondary, bool
+    // labelStyle, obj --> fonts??
 
   setButton(chosen) {
     this.setState({
@@ -95,6 +87,9 @@ export default class MuiButton extends Component {
       color: '#3e7ce0',
       borderColor: this.state.bgColor
     };
+    const dividerStyle = {
+      backgroundColor: '#C5DFF2'
+    };
     return (
       <Paper style={optionsStyle} zDepth={1}>
         <Toolbar>
@@ -144,7 +139,7 @@ export default class MuiButton extends Component {
               />
           </ToolbarGroup>
         </Toolbar>
-        <Divider style={{backgroundColor: '#C5DFF2'}}/>
+        <Divider style={dividerStyle}/>
         <Toolbar style={{backgroundColor: 'transparent'}}>
           <ToolbarGroup>
             <TextField
@@ -158,11 +153,11 @@ export default class MuiButton extends Component {
               />
           </ToolbarGroup>
         </Toolbar>
-        <Divider style={{backgroundColor: '#C5DFF2'}}/>
+        <Divider style={dividerStyle}/>
         <Toolbar style={{backgroundColor: 'transparent'}}>
           <ToolbarGroup>
             <TextField
-              floatingLabelText="Choose a color for the font [#HEX]"
+              floatingLabelText="Choose a color for the content [#HEX]"
               style={typeStyle}
               floatingLabelStyle={floatingLabelStyle}
               underlineStyle={floatingLabelStyle}
@@ -172,7 +167,7 @@ export default class MuiButton extends Component {
               />
           </ToolbarGroup>
         </Toolbar>
-        <Divider style={{backgroundColor: '#C5DFF2'}}/>
+        <Divider style={dividerStyle}/>
       </Paper>
     );
   }
@@ -180,13 +175,15 @@ export default class MuiButton extends Component {
   render() {
     const pageStyle = {
       display: 'flex',
-      // flexwrap: 'wrap'
+      flexwrap: 'wrap',
       backgroundColor: '#FAFFFD'
     };
     const previewStyle = {
       // backgroundColor: '#FAFFFD',
-      margin: '5em',
-      // height: '15em',
+      // margin: '5em',
+      marginTop: '5em',
+      marginLeft: '10em',
+      height: '15em',
       width: '20em',
       padding: '1em',
       paddingTop: '3em',

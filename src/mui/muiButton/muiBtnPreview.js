@@ -34,10 +34,21 @@ export default class MuiButtonPreview extends Component {
       fillColor: this.props.button.bgColor,
     };
     let iconStyle = {
-      fillColor: this.props.button.bgColor,
+      color: this.props.button.fontColor,
+      backgroundColor: 'transparent',
+      // backgroundColor: this.props.button.bgColor,
+    };
+    let hoverStyle = {
       backgroundColor: this.props.button.bgColor
     };
+    const dividerStyle = {
+      marginTop: '3em',
+      marginBottom: '3em',
+      backgroundColor: '#C5DFF2'
+    };
     const codeStyle = {
+      borderTop: '3px solid #C7254E',
+      borderRadius: '5px 5px 7px 7px',
       display: 'flex',
       textAlign: 'center',
       flexwrap: 'wrap'
@@ -46,14 +57,17 @@ export default class MuiButtonPreview extends Component {
       let code = `
         <FlatButton
           label="${this.props.button.label}"
-          rippleColor=${this.props.button.fontColor}
+          rippleColor="${this.props.button.fontColor}"
           style=${JSON.stringify(flatStyle)}
         />
       `;
       return (
         <div>
-          <FlatButton label={this.props.button.label} style={flatStyle} rippleColor={this.props.button.fontColor}/>
-          <Divider style={{backgroundColor: '#C5DFF2'}}/>
+          <FlatButton
+            label={this.props.button.label}
+            style={flatStyle}
+            rippleColor={this.props.button.fontColor}/>
+          <Divider style={dividerStyle}/>
           <Paper>
             <code style={codeStyle}>
               {code}
@@ -65,14 +79,17 @@ export default class MuiButtonPreview extends Component {
       let code = `
         <RaisedButton
           label="${this.props.button.label}"
-          labelColor=${this.props.button.fontColor}
+          labelColor="${this.props.button.fontColor}"
           buttonStyle=${JSON.stringify(raisedStyle)}
         />
       `;
       return (
         <div>
-          <RaisedButton label={this.props.button.label} buttonStyle={raisedStyle} labelColor={this.props.button.fontColor}/>
-          <Divider style={{backgroundColor: '#C5DFF2'}}/>
+          <RaisedButton
+            label={this.props.button.label}
+            buttonStyle={raisedStyle}
+            labelColor={this.props.button.fontColor}/>
+          <Divider style={dividerStyle}/>
           <code style={codeStyle}>
             {code}
           </code>
@@ -81,14 +98,16 @@ export default class MuiButtonPreview extends Component {
     } else if (this.props.button.type === 'float') {
       let code = `
         <FloatingActionButton
-          backgroundColor=${this.props.button.bgColor}
+          backgroundColor="${this.props.button.bgColor}"
           style=${JSON.stringify(floatStyle)}
         />
       `;
       return (
         <div>
-          <FloatingActionButton backgroundColor={this.props.button.bgColor} style={floatStyle}/>
-          <Divider style={{backgroundColor: '#C5DFF2'}}/>
+          <FloatingActionButton
+            backgroundColor={this.props.button.bgColor}
+            style={floatStyle}/>
+          <Divider style={dividerStyle}/>
           <code style={codeStyle}>
             {code}
           </code>
@@ -97,15 +116,19 @@ export default class MuiButtonPreview extends Component {
     } else if (this.props.button.type === 'icon') {
       let code = `
         <IconButton
-          style=${JSON.stringify(iconStyle)}
+          iconStyle=${JSON.stringify(iconStyle)}
+          hoveredStyle=${JSON.stringify(hoverStyle)}
         />
       `;
       return (
         <div>
-          <IconButton tooltip="IconButton" style={iconStyle}>
+          <IconButton
+            tooltip="Use 'tooltip' for any hints/tips!"
+            iconStyle={iconStyle}
+            hoveredStyle={hoverStyle}>
             <ActionHome />
           </IconButton>
-          <Divider style={{backgroundColor: '#C5DFF2'}}/>
+          <Divider style={dividerStyle}/>
           <code style={codeStyle}>
             {code}
           </code>
@@ -115,9 +138,13 @@ export default class MuiButtonPreview extends Component {
   }
 
   render() {
-    const codeStyle = {};
+    const divStyle = {
+      textAlign: 'center',
+      display: 'flex',
+      flexWrap: 'wrap'
+    };
     return (
-      <div>
+      <div style={divStyle}>
         {this.renderPreview()}
       </div>
     );
